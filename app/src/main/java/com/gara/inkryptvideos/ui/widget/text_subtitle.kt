@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import com.gara.inkryptvideos.ui.theme.MyTypography
-import network.chaintech.sdpcomposemultiplatform.ssp
+import ir.kaaveh.sdpcompose.ssp
 
 @Composable
 fun Subtitle(text: String, modifier: Modifier = Modifier) {

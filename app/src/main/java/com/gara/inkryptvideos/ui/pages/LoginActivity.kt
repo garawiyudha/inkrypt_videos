@@ -30,7 +30,7 @@ import com.gara.inkryptvideos.ui.widget.CustomButton
 import com.gara.inkryptvideos.ui.widget.StyledWelcomeText
 import com.gara.inkryptvideos.ui.widget.Subtitle
 import dagger.hilt.android.AndroidEntryPoint
-import network.chaintech.sdpcomposemultiplatform.sdp
+import ir.kaaveh.sdpcompose.sdp
 
 @AndroidEntryPoint
 class LoginActivity : ComponentActivity() {

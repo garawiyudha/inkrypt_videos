@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.gara.inkryptvideos.ui.theme.MyTypography
-import network.chaintech.sdpcomposemultiplatform.ssp
+import ir.kaaveh.sdpcompose.ssp
 
 @Composable
 fun Body(text: String, modifier: Modifier = Modifier) {

@@ -16,8 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.gara.inkryptvideos.ui.theme.MyCustomFontFamily
-import network.chaintech.sdpcomposemultiplatform.sdp
-import network.chaintech.sdpcomposemultiplatform.ssp
+import ir.kaaveh.sdpcompose.sdp
+import ir.kaaveh.sdpcompose.ssp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

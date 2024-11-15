@@ -13,7 +13,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import com.gara.inkryptvideos.ui.theme.MyCustomFontFamily
-import network.chaintech.sdpcomposemultiplatform.ssp
+import ir.kaaveh.sdpcompose.ssp
 
 @Composable
 fun StyledWelcomeText() {

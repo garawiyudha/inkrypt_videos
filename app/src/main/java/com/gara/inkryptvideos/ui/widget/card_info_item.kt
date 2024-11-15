@@ -27,8 +27,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.gara.inkryptvideos.R
 import com.gara.inkryptvideos.ui.theme.MyTypography
-import network.chaintech.sdpcomposemultiplatform.sdp
-import network.chaintech.sdpcomposemultiplatform.ssp
+import ir.kaaveh.sdpcompose.sdp
+import ir.kaaveh.sdpcompose.ssp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

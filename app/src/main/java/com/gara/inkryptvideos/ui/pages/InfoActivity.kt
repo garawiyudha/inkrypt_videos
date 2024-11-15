@@ -25,7 +25,7 @@ import com.gara.inkryptvideos.ui.theme.InkryptVideosTheme
 import com.gara.inkryptvideos.ui.widget.BackgroundImage
 import com.gara.inkryptvideos.ui.widget.CardInfoItem
 import com.gara.inkryptvideos.ui.widget.Title
-import network.chaintech.sdpcomposemultiplatform.sdp
+import ir.kaaveh.sdpcompose.sdp
 
 class InfoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

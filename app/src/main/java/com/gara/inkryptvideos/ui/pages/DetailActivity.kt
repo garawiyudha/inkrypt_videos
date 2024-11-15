@@ -32,8 +32,9 @@ import com.gara.inkryptvideos.ui.theme.InkryptVideosTheme
 import com.gara.inkryptvideos.ui.widget.BackgroundImage
 import com.gara.inkryptvideos.ui.widget.Body
 import com.gara.inkryptvideos.ui.widget.SmallTopAppBar
-import network.chaintech.sdpcomposemultiplatform.sdp
-import network.chaintech.sdpcomposemultiplatform.ssp
+import ir.kaaveh.sdpcompose.sdp
+import ir.kaaveh.sdpcompose.ssp
+
 
 class DetailActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

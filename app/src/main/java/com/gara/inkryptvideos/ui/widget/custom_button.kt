@@ -21,8 +21,8 @@ import androidx.compose.ui.unit.dp
 import com.gara.inkryptvideos.R
 import com.gara.inkryptvideos.ui.theme.MyCustomFontFamily
 import com.gara.inkryptvideos.ui.theme.MyTypography
-import network.chaintech.sdpcomposemultiplatform.sdp
-import network.chaintech.sdpcomposemultiplatform.ssp
+import ir.kaaveh.sdpcompose.sdp
+import ir.kaaveh.sdpcompose.ssp
 
 @Composable
 fun CustomButton(

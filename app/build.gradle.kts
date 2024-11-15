@@ -64,7 +64,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
 
     //screen-util
-    implementation("network.chaintech:sdp-ssp-compose-multiplatform:1.0.4")
+    implementation("com.github.Kaaveh:sdp-compose:1.1.0")
 
     //Dagger - Hilt
     implementation ("com.google.dagger:hilt-android:2.49")
