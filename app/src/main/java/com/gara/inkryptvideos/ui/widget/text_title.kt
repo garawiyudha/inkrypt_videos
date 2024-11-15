@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import com.gara.inkryptvideos.ui.theme.MyTypography
+import network.chaintech.sdpcomposemultiplatform.ssp
 
 @Composable
 fun Title(text: String, modifier: Modifier = Modifier) {
@@ -14,6 +15,6 @@ fun Title(text: String, modifier: Modifier = Modifier) {
         modifier = modifier,
         color = Color.White,
         textAlign = TextAlign.Center,
-        style = MyTypography.headlineLarge
+        style = MyTypography.headlineLarge.copy(fontSize = 18.ssp)
     )
 }

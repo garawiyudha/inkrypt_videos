@@ -4,8 +4,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
 import com.gara.inkryptvideos.ui.theme.MyTypography
+import network.chaintech.sdpcomposemultiplatform.ssp
 
 @Composable
 fun Body(text: String, modifier: Modifier = Modifier) {
@@ -13,6 +13,6 @@ fun Body(text: String, modifier: Modifier = Modifier) {
         text = text,
         modifier = modifier,
         color = Color.White,
-        style = MyTypography.bodyMedium
+        style = MyTypography.bodyMedium.copy(fontSize = 12.ssp)
     )
 }

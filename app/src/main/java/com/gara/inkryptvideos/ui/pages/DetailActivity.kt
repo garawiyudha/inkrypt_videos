@@ -1,5 +1,6 @@
 package com.gara.inkryptvideos.ui.pages
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
@@ -10,7 +11,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -19,24 +19,21 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.gara.inkryptvideos.R
 import com.gara.inkryptvideos.ui.theme.InkryptVideosTheme
-import com.gara.inkryptvideos.ui.theme.MyTypography
+import com.gara.inkryptvideos.ui.widget.BackgroundImage
 import com.gara.inkryptvideos.ui.widget.Body
-import com.gara.inkryptvideos.ui.widget.CustomButton
 import com.gara.inkryptvideos.ui.widget.SmallTopAppBar
-import com.gara.inkryptvideos.ui.widget.Subtitle
-import com.gara.inkryptvideos.ui.widget.Title
+import network.chaintech.sdpcomposemultiplatform.sdp
+import network.chaintech.sdpcomposemultiplatform.ssp
 
 class DetailActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,18 +49,19 @@ class DetailActivity : ComponentActivity() {
                 android.graphics.Color.TRANSPARENT, android.graphics.Color.TRANSPARENT
             )
         )
+
+
         super.onCreate(savedInstanceState)
         setContent {
             InkryptVideosTheme {
-                Box(modifier = Modifier.fillMaxSize()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(color = Color.Black),
+                    contentAlignment = Alignment.TopCenter
+                ) {
                     // Background image
-                    Image(
-                        painter = painterResource(id = R.drawable.bg_image),
-                        contentDescription = null,
-                        contentScale = ContentScale.FillHeight,
-                        modifier = Modifier.fillMaxSize() // This makes the image fill the entire space
-                    )
-
+                    BackgroundImage()
                     // Scrollable column for content
                     Column(
                         modifier = Modifier
@@ -83,12 +81,12 @@ class DetailActivity : ComponentActivity() {
                             Image(
                                 painter = painterResource(id = R.drawable.menu_item_bg),
                                 contentDescription = "",
-                                modifier = Modifier.size(300.dp)
+                                modifier = Modifier.size(250.sdp)
                             )
                             Image(
                                 painter = painterResource(id = R.drawable.about_icon),
                                 contentDescription = "",
-                                modifier = Modifier.size(100.dp)
+                                modifier = Modifier.size(100.sdp)
                             )
                         }
 
@@ -98,11 +96,15 @@ class DetailActivity : ComponentActivity() {
                 }
             }
         }
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
     }
 
+
     @Composable
     fun VideoPlayerInfoWidget() {
+
+
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -111,9 +113,14 @@ class DetailActivity : ComponentActivity() {
             horizontalAlignment = Alignment.Start
         ) {
             Text(
-                text = "App Build Version : 1.4.1",
+                text = "App Build Version : ${
+                    LocalContext.current.packageManager.getPackageInfo(
+                        LocalContext.current.packageName,
+                        0
+                    ).versionName ?: "Unknown"
+                }",
                 color = Color.White,
-                fontSize = 16.sp,
+                fontSize = 14.ssp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 12.dp)
             )

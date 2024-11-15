@@ -13,8 +13,8 @@ android {
         applicationId = "com.gara.inkryptvideos"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -62,6 +62,9 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     testImplementation("junit:junit:4.13.2")
+
+    //screen-util
+    implementation("network.chaintech:sdp-ssp-compose-multiplatform:1.0.4")
 
     //Dagger - Hilt
     implementation ("com.google.dagger:hilt-android:2.49")

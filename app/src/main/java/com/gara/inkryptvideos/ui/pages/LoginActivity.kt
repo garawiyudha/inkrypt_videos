@@ -1,37 +1,36 @@
 package com.gara.inkryptvideos.ui.pages
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.gara.inkryptvideos.R
-import com.gara.inkryptvideos.ui.widget.CustomButton
 import com.gara.inkryptvideos.ui.theme.InkryptVideosTheme
-import com.gara.inkryptvideos.ui.theme.MyTypography
+import com.gara.inkryptvideos.ui.widget.BackgroundImage
+import com.gara.inkryptvideos.ui.widget.CustomButton
 import com.gara.inkryptvideos.ui.widget.StyledWelcomeText
 import com.gara.inkryptvideos.ui.widget.Subtitle
-import com.gara.inkryptvideos.ui.widget.Title
 import dagger.hilt.android.AndroidEntryPoint
+import network.chaintech.sdpcomposemultiplatform.sdp
 
 @AndroidEntryPoint
 class LoginActivity : ComponentActivity() {
@@ -52,41 +51,69 @@ class LoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             InkryptVideosTheme {
-                // Box allows stacking of composables
-                Box(modifier = Modifier.fillMaxSize()) {
-                    // Set the image as the background in the Box
-                    Image(
-                        painter = painterResource(id = R.drawable.bg_image),
-                        contentDescription = null,
-                        contentScale = ContentScale.FillHeight,
-                        modifier = Modifier.fillMaxSize() // This makes the image fill the entire space
-                    )
+                // Use Box for stacking composables
+                Box(
 
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(color = Color.Black),
+                    contentAlignment = Alignment.TopCenter
+                ) {
+                    // Set the image as the background
+                    BackgroundImage()
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .align(Alignment.Center),
+                            .align(Alignment.Center)
+                            .padding(horizontal = 24.dp),
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        StyledWelcomeText()
-                        Box(modifier = Modifier.height(18.dp))
-                        Subtitle(text = "Ensure your privacy and keep\n your content safe and secure.")
+                        Column(
+                            modifier = Modifier.weight(1.5f),
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            StyledWelcomeText()
+                            Spacer(modifier = Modifier.height(16.dp))
+                            Subtitle(
+                                text = "Ensure your privacy and keep\n your content safe and secure.",
+                                modifier = Modifier.padding(horizontal = 8.dp)
+                            )
+                        }
+
                         Image(
                             painter = painterResource(id = R.drawable.app_logo),
                             contentDescription = null,
                             modifier = Modifier
+                                .weight(1f)
+                                .size(110.sdp),
+                            alignment = Alignment.TopCenter
                         )
-                        CustomButton(text = "Get More Information", onClick = {
-                            startActivity(Intent(this@LoginActivity, InfoActivity::class.java))
-                        })
+                        Box(
+                            modifier = Modifier.weight(1f).padding(bottom = 60.sdp),
+                            contentAlignment = Alignment.BottomCenter
+                        ) {
+                            CustomButton(
+                                text = "Get More Information",
+                                onClick = {
+                                    startActivity(
+                                        Intent(
+                                            this@LoginActivity,
+                                            InfoActivity::class.java
+                                        )
+                                    )
+                                },
+                            )
+                        }
                     }
-                    // Your content goes here
                 }
             }
         }
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 }
+
 
 
 

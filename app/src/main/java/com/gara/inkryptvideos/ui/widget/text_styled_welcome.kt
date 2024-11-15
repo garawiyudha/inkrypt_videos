@@ -1,7 +1,6 @@
 package com.gara.inkryptvideos.ui.widget
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,8 +12,8 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.sp
 import com.gara.inkryptvideos.ui.theme.MyCustomFontFamily
+import network.chaintech.sdpcomposemultiplatform.ssp
 
 @Composable
 fun StyledWelcomeText() {
@@ -26,12 +25,12 @@ fun StyledWelcomeText() {
     )
     val whiteTextStyle = SpanStyle(
         color = Color.White,
-        fontSize = 36.sp,
+        fontSize = 24.ssp,
         shadow = shadowStyle
     )
     val cyanBoldTextStyle = SpanStyle(
         color = Color.Cyan,
-        fontSize = 36.sp,
+        fontSize = 24.ssp,
         fontWeight = FontWeight.Bold,
         shadow = shadowStyle
     )
@@ -53,7 +52,6 @@ fun StyledWelcomeText() {
             color = Color.White,
             fontFamily = MyCustomFontFamily,
             fontWeight = FontWeight.Bold,
-            fontSize = 36.sp,
             textAlign = TextAlign.Center,
             modifier = Modifier.align(Alignment.Center)
         )
